@@ -7,16 +7,17 @@ const AddTodo = ({ history }) => {
 
   const addTodoHandler = (e) => {
     e.preventDefault();
-    console.log(newTodo);
+
     db.collection("todos").add({
       todo: newTodo,
+      timestamp: new Date(),
     });
     history.push("/");
   };
 
   return (
     <div>
-      <h1 class="py-5">Add A Todo</h1>
+      <h1 className="py-5">Add A Todo</h1>
       <Container>
         <Form onSubmit={addTodoHandler}>
           <Form.Group>
@@ -26,9 +27,10 @@ const AddTodo = ({ history }) => {
               placeholder="enter todo"
               value={newTodo}
               onChange={(e) => setNewTodo(e.target.value)}
+              data-testid="todo-input"
             ></Form.Control>
           </Form.Group>
-          <Button type="submit" variant="success">
+          <Button type="submit" variant="success" data-testid="submit">
             Add
           </Button>
         </Form>

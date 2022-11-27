@@ -13,6 +13,7 @@ const HomeScreen = () => {
         snapshot.docs.map((doc) => ({
           id: doc.id,
           text: doc.data().todo,
+          timestamp: doc.data().timestamp,
         }))
       );
     });
@@ -21,7 +22,7 @@ const HomeScreen = () => {
   return (
     <div>
       <h1 className="heading py-5">Full Stack Todo App!</h1>
-      <Link to="/addtodo">
+      <Link to="/addtodo" data-testid="add-todo-link">
         <Button>Add New Todo</Button>
       </Link>
 

@@ -3,10 +3,12 @@
   border-bottom: 1px solid rgb(224, 223, 223);
   display: flex;
   margin: 0 auto;
+  justify-content: space-between;
 }
 
 .todo-text {
   font-size: 1.3rem;
+  margin-right: auto;
 }
 
 .todo-text p {
@@ -15,10 +17,6 @@
 
 .todo-id {
   display: flex;
-}
-
-.buttons {
-  margin: 0 auto;
 }
 
 .checked {
